@@ -1,0 +1,703 @@
+Scanner Assignment:
+
+*********PRINT MESSAGE*********
+
+import java.util.Scanner;
+public class Printmessage {
+
+	public static void main(String[] args) {
+	Scanner sc=new Scanner("System.in");
+	System.out.println("Welcome to object oriented programming:");
+
+	}
+
+}
+
+
+Output:
+Welcome to object oriented programming
+
+
+
+*******PRINT CUSTOMER DETAILS**********
+
+import java.util.Scanner;
+public class Customerdetails {
+
+	public static void main(String[] args) {
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("Enter the name:");
+		 String name=sc.nextLine();
+		 System.out.println("Enter age:");
+		 int age=sc.nextInt();
+		 System.out.println("enter gender:");
+		 String gender=sc.next();
+		 sc.nextLine();
+		 System.out.println("hailing from:");
+		 String from=sc.nextLine();
+		 System.out.println("name:" + name);
+		 System.out.println("age:" + age);
+		 System.out.println("gender:" + gender);
+		 System.out.println("city:" + from);
+				
+
+	}
+
+}
+
+
+Output:
+Enter the name:
+afsha
+Enter age:
+21
+enter gender:
+female
+hailing from:
+kodad
+name:afsha
+age:21
+gender:female
+city:kodad
+
+********CAR DETAILS*********
+
+import java.util.Scanner;
+public class Cardetails {
+
+	public static void main(String[] args) {
+		int carno;
+		String carname;
+		float carprice;
+		Scanner in=new Scanner(System.in);
+		System.out.println("enter the carname:");
+		carname=in.nextLine();
+		System.out.println("enter the carno:");
+		carno=in.nextInt();
+		System.out.println("enter the price:");
+		carprice=in.nextFloat();
+		System.out.println("Car name:"+carname);
+		System.out.println("Car no:"+carno);
+		System.out.print("Price:");
+		System.out.printf("%.2f",carprice);
+		System.out.print("rs only");
+
+	}
+
+}
+
+Output:
+enter the carname:
+Benz
+enter the carno:
+8866
+enter the price:
+5000000
+Car name:Benz
+Car no:8866
+Price:5000000.00rs only
+
+********BILL GENERATION********
+
+import java.util.Scanner;
+public class Billgeneration {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the no of pizzas bought:");
+		int pizza=sc.nextInt();
+		System.out.println("enter the no of puffs bought:");
+		int puff=sc.nextInt();
+		System.out.println("enter the no of cool drinks bought:");
+		int cdrink=sc.nextInt();
+		System.out.println("Bill Details");
+		System.out.println("no of pizzaz:"+pizza);
+		System.out.println("no of puffs:"+puff);
+		System.out.println("no of cooldrinks:"+cdrink);
+		System.out.println("total price="+(pizza*100+puff*20+cdrink*10));
+		System.out.println("ENJOY THE SHOW!!!");
+
+	}
+
+}
+
+
+Output:
+enter the no of pizzas bought:
+10
+enter the no of puffs bought:
+8
+enter the no of cool drinks bought:
+8
+Bill Details
+no of pizzaz:10
+no of puffs:8
+no of cooldrinks:8
+total price=1240
+ENJOY THE SHOW!!!
+
+
+*********REGESTRATION DETAILS**********
+import java.util.Scanner;
+public class Regestrationdetails {
+
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the name:");
+	String name=sc.nextLine();
+	System.out.println("enter the age:");
+	int age=sc.nextInt();
+	System.out.println("enter the phone no:");
+	double phoneno=sc.nextDouble();
+	System.out.println("enter the qualification:");
+	String qualification=sc.next();
+	System.out.println("enter the email:");
+	String email=sc.next();
+	System.out.println("enter the noofexp:");
+	float noofexp=sc.nextFloat();
+ 	System.out.println("Dear"+" "+name+","+"thanks for regestering in our portal,regestration id will be mailed to"+" "+email+" "+"within 2 working      days");
+	
+
+	}
+
+}
+
+Output:
+enter the name:
+afsha
+enter the age:
+21
+enter the phone no:
+9390008650
+enter the qualification:
+MBA
+enter the email:
+skafshatabasum@gmail.com
+enter the noofexp:
+1.5
+Dear afsha,thanks for regestering in our portal,regestration id will be mailed to skafshatabasum@gmail.com within 2 working days
+
+
+
+Decision making Assignment:
+
+******** Number Is POSITIVE OR NEGATIVE*********
+import java.util.Scanner;
+public class Decisionmaking {
+      public static void main (String[] args)
+      {
+    	  Scanner sc=new Scanner(System.in);
+    	  System.out.println("enter the number:");
+    	  int num=sc.nextInt();
+    	  if(num<0)
+    	  {
+    		  System.out.println("number is negative:");
+    		  
+    	  }
+    	  else if(num>0)
+          {
+    		  System.out.println("number is positive:");
+          }
+    	  
+        
+      }
+}
+
+Output:
+enter the number:
+35
+number is positive
+
+*********DECIMAL PLACES*********
+import java.util.Scanner;
+public class Decimalplaces {
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		System.out.println("enter floating point number:");
+		double a=in.nextDouble();
+		System.out.println("enter floating point another number:");
+		double b=in.nextDouble();
+		a=Math.round(a*1000);
+		a=a/1000;
+		b=Math.round(b*1000);
+		b=b/1000;
+		if(a==b)
+		{
+			System.out.println("they are same upto three decimal places:");
+		}
+		else
+		{
+			System.out.println("they are different:");
+		}
+
+	}
+
+}
+
+Output:
+enter floating point number:
+1.5
+enter floating point another number:
+2.4
+they are different
+
+***********DAYS IN A MONTH*********
+import java.util.Scanner;
+public class Daysinamonth {
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		int number_of_DaysInMonth=0;
+		String MonthName="unknown";
+		System.out.print("enter a month number:");
+		int month=in.nextInt();
+		System.out.println("enter a year:");
+		int year=in.nextInt();
+		switch(month) {
+		case 1: 
+			MonthName="january";
+			number_of_DaysInMonth=31;
+			break;
+		case 2:
+			MonthName="february";
+			number_of_DaysInMonth=28;
+			break;
+		case 3:
+			MonthName="march";
+			number_of_DaysInMonth=31;
+			break;
+		case 4:
+			MonthName="april";
+			number_of_DaysInMonth=30;
+			break;
+		case 5:
+			MonthName="may";
+			number_of_DaysInMonth=31;
+			break;
+		case 6:
+			MonthName="june";
+			number_of_DaysInMonth=30;
+			break;
+		case 7:
+			MonthName="july";
+			number_of_DaysInMonth=31;
+			break;
+		case 8:
+			MonthName="august";
+			number_of_DaysInMonth=31;
+			break;
+		case 9:
+			MonthName="september";
+			number_of_DaysInMonth=30;
+			break;
+		case 10:
+			MonthName="october";
+			number_of_DaysInMonth=31;
+			break;
+		case 11:
+			MonthName="november";
+			number_of_DaysInMonth=30;
+			break;
+		case 12:
+			MonthName="december";
+			number_of_DaysInMonth=31;
+			break;
+		}
+	System.out.print(MonthName + "" + year + ""+ "has"+ number_of_DaysInMonth + "days\n");
+		
+	}
+
+}
+ 
+Output:
+enter a month number:6
+enter a year:
+2019
+june2019has30days
+
+
+********** GREATEST OF THREE NUMBERS*********
+import java.util.Scanner;
+public class Greatestofthreenumbers {
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		System.out.print("enter the first number:");
+		int num1=in.nextInt();
+		System.out.print("enter the second number:");
+		int num2=in.nextInt();
+		System.out.print("enter the third number:");
+		int num3=in.nextInt();
+		if(num1>num2)
+			 System.out.println("first number is greater:"+num1);
+	    if(num2>num3)
+	    	System.out.println("second number is greater:"+num2);
+	    if(num3>num1)
+	    	if(num3>num2)
+	    		System.out.println("third number is greater:"+num3);
+	    
+	}
+
+}
+
+Output:
+enter the first number:67
+enter the second number:86
+enter the third number:34
+second number is greater:86
+
+******** LEAP YEAR**********
+import java.util.Scanner;
+public class Leapyear {
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		System.out.println("enter year:");
+		int year=in.nextInt();
+		boolean x=(year%4)==0;
+		boolean y=(year%100)!=0;
+		boolean z=((year%100==0)&&(year%400==0));
+		if(x&&(y||z))
+		{
+			System.out.println(year+"is a leap year");
+			
+		}
+		else
+		{
+			System.out.println(year+"is not a leap year");
+			
+		}
+		
+	}
+
+}
+
+Output:
+enter year:
+2016
+2016is a leap year
+
+*************** VOWELS AND CONSONENTS***********
+import java.util.Scanner;
+public class Vowelsandconsonents {
+	public static void main(String[] args) {
+		int i=0;
+		Scanner in=new Scanner(System.in);
+		System.out.println("enter a character:");
+		char ch=in.next().charAt(0);
+		switch(ch)
+		{
+		case 'a':
+		case 'e':
+		case 'i':
+		case 'o':
+		case 'u':
+		case 'A':
+		case 'E':
+		case 'I':
+		case 'O':
+		case 'U': i++;
+		
+		}
+		if(i==1)
+		System.out.println("entered character"+ch+"is vowel");
+		else if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+		System.out.println("entered character"+ch+"is consonent");
+		else
+		System.out.println("not an alphabet:");
+		
+		
+		}
+
+}
+ 
+Output:
+enter a character:
+c
+entered charactercis consonent
+
+*******WEEK DAYS**********
+import java.util.Scanner;
+public class Weekdays {
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		System.out.println("enter the day of your choice between 1 and 7:");
+		int day=in.nextInt();
+		switch(day)
+		{
+		case 1: System.out.println("monday");
+		break;
+		case 2: System.out.println("tuesday");
+		break;
+		case 3: System.out.println("wednesday");
+		break;
+		case 4: System.out.println("thursday");
+		break;
+		case 5: System.out.println("friday");
+		break;
+		case 6: System.out.println("saturday");
+		break;
+		case 7: System.out.println("sunday");
+		break;
+		default: System.out.println("invalid");
+		
+			
+			
+		}
+		
+	}
+
+}
+
+Output:
+enter the day of your choice between 1 and 7:
+5
+friday
+
+
+************* ARMSTRONG NUMBER**********
+import java.util.Scanner;
+public class Armstrongnumber {
+
+	public static void main(String[] args) {
+		int num,count=0,a,b,c,sum=0;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number:");
+	    num=sc.nextInt();
+        a = num;
+        c = num;
+        while(a > 0)
+        {
+            a = a / 10;
+            count++;
+        }
+        while(num > 0)
+        {
+            b = num % 10;
+            sum = (int) (sum+Math.pow(b, count));
+            num = num/ 10;
+        }
+        if(sum == c)
+        {
+            System.out.println(c+ " is an Armstrong number");
+        }
+        else
+        {
+            System.out.println(c+ " is not an Armstrong number");
+        }    
+	
+	}
+
+}
+
+Output:
+enter the number:
+6
+6 is an Armstrong number
+
+********** CALCULATOR***********
+import java.util.Scanner;
+public class Calculator {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		char op,s;
+		do
+		{
+			System.out.println("enter first input:");
+			int num1=sc.nextInt();
+			System.out.println("enter second input:");
+			int num2=sc.nextInt();
+			System.out.println("enter the operator: +,-,*,/,%");
+			op=sc.next().charAt(0);
+			
+			switch(op)
+			{
+			case '+': System.out.println(num1+num2);
+			break;
+			case '-': System.out.println(num1-num2);
+			break;
+			case '*': System.out.println(num1*num2);
+			break;
+			case '/': System.out.println(num1/num2);
+			break;
+			case '%': System.out.println(num1%num2);
+			break;
+			default: System.out.println("invalid:");
+			
+		   }
+		   System.out.println("if you want to continue press y or Y for yes and press n or N for no:");
+		   s=sc.next().charAt(0);
+		}while(s=='y'||s=='Y');
+		if(s=='n'||s=='N');
+		{
+			System.out.println("THANK YOU!!!");
+		}
+		
+
+	}
+
+}
+
+Output:
+enter first input:
+3
+enter second input:
+7
+enter the operator: +,-,*,/,%
++
+10
+if you want to continue press y or Y for yes and press n or N for no:
+y
+enter first input:
+7
+enter second input:
+8
+enter the operator: +,-,*,/,%
+-
+-1
+if you want to continue press y or Y for yes and press n or N for no:
+y
+enter first input:
+6
+enter second input:
+5
+enter the operator: +,-,*,/,%
+*
+30
+if you want to continue press y or Y for yes and press n or N for no:
+y
+enter first input:
+4
+enter second input:
+9
+enter the operator: +,-,*,/,%
+/
+0
+if you want to continue press y or Y for yes and press n or N for no:
+y
+enter first input:
+6
+enter second input:
+9
+enter the operator: +,-,*,/,%
+%
+6
+if you want to continue press y or Y for yes and press n or N for no:
+n
+THANK YOU!!!
+
+*********** CO PRIME NUMBER**********
+import java.util.Scanner;
+public class Coprime {
+
+	public static void main(String[] args) {
+		int i,c=0;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a number");
+		int a=sc.nextInt();
+		System.out.println("Enter b number");
+		int b=sc.nextInt();
+		for(i=1;i<=a;i++) {
+			if(a%i==0 && b%i==0)
+			{
+				c=i;
+			}
+			
+		}
+		if(c==1) {
+			System.out.println("Numbers are co-prime "+a+","+b);
+		}
+		else {
+			System.out.println("Numbers are not co-prime "+a+","+b);
+		}
+		
+
+	}
+
+}
+
+Output:
+Enter a number
+21
+Enter b number
+22
+Numbers are co-prime 21,22
+
+
+******** FIBONACCI NUMBER*************
+import java.util.Scanner;
+public class Fibonacciprime {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter a number:");
+		int a=1,b=1,k=0;
+		int n=sc.nextInt();
+		while(k<=n)
+		{
+			k=a+b;
+			int count=0;
+			for(int i=1;i<=k;i++)
+			{
+				if(k%i==0)
+				{
+					count++;
+				}
+			}
+			if(count==2)
+			{
+				System.out.println(" "+k);
+			}
+                        a=b;
+			b=k;
+		}
+
+	}
+
+}
+Output:
+enter a number:
+100
+ 2
+ 3
+ 5
+ 13
+ 89
+
+*********** TRIANGULAR NUMBER**************
+import java.util.Scanner;
+public class Triangularnumber {
+
+	public static void main(String[] args) {
+		int s=0,i;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number:");
+		int n =sc.nextInt();
+		for(i=1;s<=n;i++)
+		{
+			s=s+i;
+		}
+		if(s==n)
+		{
+			System.out.println("the given number is Triangular:"+n);
+		}
+		else
+		{
+			System.out.println("the given number is not triangular:"+n);
+		}
+		
+
+	}
+
+}
+
+Output:
+enter the number:
+6
+the given number is not triangular:6
+
+
+
+
+
+
+
+

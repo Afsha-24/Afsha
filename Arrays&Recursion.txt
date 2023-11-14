@@ -1,0 +1,992 @@
+1. Print factorial of given number using recursion?
+
+package Recursion;
+
+public class FactExample {
+	
+public static int fact(int num)
+	{
+		if(num==0 || num==1)
+		{
+			return 1;
+			
+		}
+		else
+		{
+			return(num*fact(num-1));
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int result=fact(5);
+		System.out.println("Result is"+result);
+
+	}
+
+}
+
+OUTPUT:
+Result is120
+
+2. Print 1 to 100 numbers using recursion?
+
+import java.util.Scanner;
+
+public class Print1to100 {
+	void  print(int n,int m)
+	{
+		if(n<=m)
+		{
+			System.out.print(n+" ");
+			print(n+1,m);
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Print1to100 v=new Print1to100();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		v.print(n,m);
+
+
+
+
+
+	}
+
+}
+output:
+Enter the number: 
+1
+100
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 
+
+3.Print Fibonacci series using recursion
+import java.util.Scanner;
+
+public class FibonacciSeries {
+	int fibonacci(int n) {
+		if (n == 0) {
+			return 0;
+		} 
+		else if (n == 1) {
+			return 1;
+		} 
+		else {
+			return (fibonacci(n - 1) + fibonacci(n - 2));
+		}
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FibonacciSeries v=new FibonacciSeries();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int n=sc.nextInt();
+		System.out.println("Fibonacci Series:");
+		for (int i = 0; i < n; i++) {
+			System.out.print(v.fibonacci(i) + " ");
+
+		}
+	}
+
+}
+output:
+Enter the number: 
+5
+Fibonacci Series:
+0 1 1 2 3 
+
+4. Sort the given array and print in descending order.
+Int a [] = {7, 2, 3, 1, 9, 8, 10};
+
+public class Sortanddescending {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int t=0;
+		int a [] = {7, 2, 3, 1, 9, 8, 10};
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(a[i]>a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+			}
+		}
+		System.out.println("The sorted array values are:  ");
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		System.out.println(" ");
+		System.out.println("Descending order of an array: ");
+		for(int i=a.length-1;i>=0;i--)
+		{
+			System.out.print(a[i]+" ");
+		}
+
+
+
+
+	}
+
+}
+output:
+The sorted array values are:  
+1 2 3 7 8 9 10  
+Descending order of an array: 
+10 9 8 7 3 2 1 
+
+5. Print the given array in m*n matrix format
+Int a[]={7,1,2,3,4,5,6,7,8,9};
+public class Mbynmatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int m=5;
+		int n=2;
+		int a[]=new int[] {7,1,2,3,4,5,6,7,8,9};
+		if(a.length==m*n)
+		{
+		for(int i=0;i<m;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				int k=i*n+j;
+				System.out.print(a[k]+" ");
+			}
+			System.out.println(" ");
+		}
+
+	}
+	}
+
+}
+
+output:
+7 1  
+2 3  
+4 5  
+6 7  
+8 9  
+
+6. Program to find nth largest element in the given array;
+Int a[]={2,7,8,6,5,9,0,1,4};
+import java.util.Scanner;
+
+public class Nthlargestnuminarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[]=new int[]{2,7,8,6,5,9,0,1,4};
+		int t=0;
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(a[i]>a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+
+				}
+			}
+		}
+		
+			System.out.println("The largest element is: "+a[a.length-1]);
+
+	}
+}
+
+OUTPUT:
+The largest element is: 9
+
+7. Print Pascal Triangle
+import java.util.Scanner;
+
+public final class PascalTriangle {
+	int factifn(int i)
+	{
+		int h=1;
+		for(int k=1;k<=i;k++)
+		{
+			h=k*h;
+		}
+		return h;
+	}
+	int factr(int j)
+	{
+		int f=1;
+		for(int k=1;k<=j;k++)
+		{
+			f=k*f;
+		}
+		return f;
+		
+	}
+	int factnsubr(int d)
+	{
+		int g=1;
+		for(int k=1;k<=d;k++)
+		{
+			g=k*g;
+		}
+		return g;
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PascalTriangle v=new PascalTriangle();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the rows to print: ");
+		int n=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<=n-i;j++)
+			{
+				System.out.print(" ");
+			}
+			for(int j=0;j<=i;j++)
+			{
+				int d=i-j;
+				int s=v.factifn(i)/( v.factnsubr(d)*v.factr(j));
+				System.out.print(" "+s);
+				
+			}
+			System.out.println(" ");
+		}
+
+	}
+
+}
+output:
+enter the rows to print: 
+5
+       1 
+      1 1 
+     1 2 1 
+    1 3 3 1 
+   1 4 6 4 1 
+
+8. Java Program to Put Even & Odd Elements of an Array in 2 Separate Arrays?
+
+package Recursion;
+import java.util.Scanner;
+public class Evenorodd {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a array size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		System.out.println("The array values are: ");
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("The even numbers of an array: ");
+
+		for(int i=0;i<s;i++)
+		{
+			if(a[i]%2==0)
+			{
+				System.out.print(a[i]+" ");
+			}
+
+		}
+		System.out.println(" ");
+		System.out.println("The odd numbers of an array: ");
+		for(int i=0;i<s;i++)
+		{
+			if(a[i]%2!=0)
+			{
+				System.out.print(a[i]+" ");
+			}
+			
+
+		}
+		
+	}
+
+}
+
+OUTPUT:
+Enter a array size: 
+6
+The array values are: 
+1
+3
+2
+6
+7
+5
+The even numbers of an array: 
+2 6  
+The odd numbers of an array: 
+1 3 7 5 
+
+9. Java Program to Insert an Element in a Specified Position in a Given Array
+import java.util.Scanner;
+public class Specifiedposittioninarray {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the position of index: ");
+		int p=sc.nextInt();
+		System.out.println("Enter the number to insert: ");
+		int n=sc.nextInt();
+		int a[]=new int[]{1,2,3,5,6,7};
+		int b[]=new int[a.length+1];
+		int k=0;
+		for(int i=0;i<b.length;i++)
+		{
+			if(i==p)
+			{
+				b[i]=n;
+			}
+			else
+			{
+				b[i]=a[k];
+				k++;
+			}
+		}
+		for(int i=0;i<b.length;i++)
+		{
+			System.out.print(b[i]+" ");
+		}
+
+
+	}
+
+}
+
+OUTPUT:
+Enter the position of index: 
+3
+Enter the number to insert: 
+12
+1 2 3 12 5 6 7 
+
+
+10. Java Program to Delete the Specified Integer from an Array.
+
+import java.util.Scanner;
+public class Deletespecifiedarray {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int a[]=new int[8];
+		System.out.println("Enter the array elements: ");
+		for(int k=0;k<a.length;k++)
+		{
+			a[k]=sc.nextInt();
+		}
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		System.out.println(" ");
+		System.out.println("Enter the number to delete: ");
+		int n=sc.nextInt();
+		int index=0;
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]==n)
+			{
+				index=i;
+			}
+		}
+		int b[]=new int[a.length-1];
+		int j=0;
+
+		for(int i=0;i<a.length;i++)
+		{
+			if(i!=index)
+			{
+				b[j]=a[i];
+				j++;
+			}
+
+		}
+		for(int i=0;i<b.length;i++)
+		{
+			System.out.print(b[i]+" ");
+		}
+	}
+}
+
+
+OUTPUT:
+Enter the array elements: 
+1
+4
+6
+4
+5
+9
+41
+12
+1 4 6 4 5 9 41 12  
+Enter the number to delete: 
+41
+1 4 6 4 5 9 12 
+
+11. Java Program to Find the Largest Two Numbers in a Given Array
+import java.util.Scanner;
+
+public class Twolargestinarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the size: ");
+		int s=sc.nextInt();
+		int a[]= new int[s];
+		System.out.println("Enter the array values: ");
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		int t=0;
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(a[i]>a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+
+				}
+			}
+		}
+		System.out.println("The array values are: ");
+		for(int k=0;k<a.length;k++)
+		{
+			System.out.println(a[k]+" ");
+
+		}
+		System.out.println("The first highest value is  "+a[a.length-1]);
+		System.out.println("The second highest value is "+a[a.length-2]);
+
+
+
+	}
+
+
+}
+
+OUTPUT:
+
+Enter the size: 
+4
+Enter the array values: 
+2
+12
+5
+6
+The array values are: 
+2 
+5 
+6 
+12 
+The first highest value is  12
+The second highest value is 6
+
+12. Java Program to Split an Array from Specified Position
+import java.util.Scanner;
+
+public class Splitarrayspecifiedposition {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("Enter the position to split: ");
+		int n=sc.nextInt();
+		int k=0;
+		int d=s-n;
+		int f=s-d;
+		int b[]=new int[d+1];
+		int c[]=new int[f-1];
+		for(int i=0;i<n;i++)
+		{
+			b[k]=a[i];
+		        k++;
+		}
+		for(int i=0;i<b.length;i++)
+		{
+			System.out.print(b[i]+" ");
+		}
+		System.out.println(" ");
+		System.out.println("Splitted array ");
+		int h=0;
+		for(int i=d+1;i<a.length;i++)
+		{
+		   c[h]=a[i];
+		   h++;
+		}
+		for(int j=0;j<c.length;j++)
+		{
+			System.out.print(c[j]+" ");
+		}
+	}
+
+}
+output:
+enter the size: 
+7
+1
+2
+3
+4
+5
+6
+7
+Enter the position to split: 
+3
+1 2 3  
+Splitted array 
+4 5 6 7
+
+13. Java Program to Increment Every Element of the Array by One & Print Incremented Array
+Eg: Enter no. of elements you want in array:5
+Enter all the elements:
+2
+5
+8
+6
+9
+Elements of array after increment by 1:3,6,9,7,10
+import java.util.Scanner;
+
+public class IncrementEverynumby1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		System.out.println("Enter the array elements: ");
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("Elements of array after increment by 1: ");
+		for(int i=0;i<s;i++)
+		{
+			int m=a[i]+1;
+			System.out.print(m+" ");
+		}
+
+	}
+
+}
+output:
+Enter the size: 
+5
+Enter the array elements: 
+10
+5
+3
+6
+9
+Elements of array after increment by 1: 
+11 6 4 7 10 
+
+14. Java Program to Find the Number of Non-Repeated Elements in an Array
+import java.util.Scanner;
+
+public class Nonrepeatednumberinarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		for(int i=0;i<a.length;i++)
+		{
+			int c=0;
+			for(int j=1;j<a.length;j++)
+			{
+				if(a[i]==a[j])
+				{
+					c++;
+				}
+			}
+			if(c<1)
+			{
+				System.out.println(a[i]);
+			}
+		}
+	
+	}
+
+}
+
+OUTPUT:
+
+
+Enter the size:
+6
+1 2 3 2 4 5
+1
+3
+4
+5
+
+15. Java Program to Identify Missing Numbers in a Given Array
+
+public class Missingnumberinarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[]=new int[] {1,3,6,8,9};
+		int t=0;
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++) 
+			{
+				if(a[i]>a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+			}
+		}
+		int m=a[a.length-1];
+		int b[]=new int[m+1];
+		for(int k:a)
+		{
+			if(k>=0 && k<=m)
+			{
+				b[k]=1;
+			}
+		}
+		System.out.println("Missing numbers are: ");
+		for(int i=1;i<=m;i++)
+		{
+			if(b[i]==0)
+			{
+				System.out.print(i+" ");
+			}
+		}
+		
+		
+
+	}
+}
+output:
+Missing numbers are: 
+2 4 5 7 
+
+16. Java Program to Segregate 0s on Left Side & 1s on Right Side of the Array
+int array[] = { 0, 1, 0, 1, 1, 0 };
+import java.util.Scanner;
+
+public class Segregate0left1right {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the array size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+			
+		}
+		int t=0;
+		for(int i=0;i<s;i++)
+		{
+			for(int j=i+1;j<s;j++)
+			{
+				if(a[i]>a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+			}
+		}
+		for(int i=0;i<s;i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+
+	}
+
+}
+output:
+Enter the array size: 
+7
+1
+0
+0
+0
+1
+1
+0
+0 0 0 0 1 1 1
+ 
+
+17. Java Program to Print the Odd & Even Numbers in an Array
+import java.util.Scanner;
+
+public class Evenandoddarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a array size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		System.out.println("The array values are: ");
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("The even numbers of an array: ");
+
+		for(int i=0;i<s;i++)
+		{
+			if(a[i]%2==0)
+			{
+				System.out.print(a[i]+" ");
+			}
+
+		}
+		System.out.println(" ");
+		System.out.println("The odd numbers of an array: ");
+		for(int i=0;i<s;i++)
+		{
+			if(a[i]%2!=0)
+			{
+				System.out.print(a[i]+" ");
+			}
+			
+
+		}
+		
+	}
+
+}
+output:
+Enter a array size: 
+7
+The array values are: 
+1
+2
+3
+4
+5
+6
+7
+The even numbers of an array: 
+2 4 6  
+The odd numbers of an array: 
+1 3 5 7
+
+ 
+18. Java Program to Print the kth Element in the Array
+import java.util.Scanner;
+
+public class Kthelementinarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		System.out.println("Enter the array elements: ");
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("Enter the number ");
+		int n=sc.nextInt();
+		System.out.println("The value of index "+n+" is: "+a[n]);
+		
+
+	}
+
+}
+output:
+enter the size: 
+6
+Enter the array elements: 
+1
+2
+6
+4
+5
+8
+Enter the number 
+4
+The value of index 4 is: 5
+
+
+
+19. Java Program to Search Key Elements in an Array
+Eg: Enter no. of elements you want in array:7
+Enter all the elements:
+2
+4
+1
+5
+7
+6
+9
+Enter the element you want to find:5
+Element found at position:4
+
+import java.util.Scanner;
+
+public class SearchkeyElementsinarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the size: ");
+		int s=sc.nextInt();
+		int a[]=new int[s];
+		System.out.println("enter the array elements: ");
+		for(int i=0;i<s;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("enter the element you want to find: ");
+		int n=sc.nextInt();
+		for(int i=0;i<s;i++)
+		{
+			if(a[i]==n)
+			{
+				i=i+1;
+				System.out.print("Element found at position: "+i);
+			}
+		}
+		
+
+	}
+
+}
+output:
+Enter the size: 
+6
+enter the array elements: 
+2
+3
+5
+4
+2
+1
+enter the element you want to find: 
+4
+Element found at position: 4
+
+
+20. Java program to create a matrix and fill it with prime numbers
+Given number of rows and cols of a matrix and we have to fill it with the prime numbers using java 
+program.
+Example:
+ Input:
+ Rows: 3
+ Cols: 3
+ Output:
+ Matrix:
+ 2 3 5
+ 7 11 13
+ 1719 23
+import java.util.Scanner;
+
+public class PrimeMatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the rows and cols of a matrix: ");
+		int m=sc.nextInt();
+		int n=sc.nextInt();
+		int a[]=new int[m*n];
+		int k=0;
+		int d=0;
+		int num=2;
+		int v=m*n;
+		while(d<v)
+		{
+			int c=0;
+			for(int i=1;i<=num;i++)
+			{
+
+				if(num%i==0)
+				{
+					c=c+1;
+
+				}
+			}
+			
+			if(c==2)
+			{
+				a[k]=num;
+				k++;
+				d++;
+			}
+			num++;
+		}
+		for(int i=0;i<m;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				int l=i*n+j;
+				System.out.print(a[l]+" ");
+			}
+			System.out.println(" ");
+		}
+
+	}
+
+}
+output:
+Enter the rows and cols of a matrix: 
+3
+3
+2 3 5  
+7 11 13  
+17 19 23  
+Enter the rows and cols of a matrix: 
+3
+4
+2 3 5 7  
+11 13 17 19  
+23 29 31 37  
+
+

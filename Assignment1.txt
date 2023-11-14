@@ -1,0 +1,270 @@
+package Arrays;
+import java.util.*;
+public class Emp1 
+{
+	int id;
+	String name;
+	float sal;
+	Emp1(int id,String name,float sal)
+	{
+		this.id=id;
+		this.name=name;
+		this.sal=sal;
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		Emp obj1=new Emp(101,"Afsha",50000);
+		Emp obj2=new Emp(102,"Farha",20002);
+		Emp obj3=new Emp(103,"Jhansi",15003);
+		Emp obj4=new Emp(104,"Karishma",30004);
+		ArrayList<Emp> a=new ArrayList<Emp>();
+		a.add(obj1);
+		a.add(obj2);
+		a.add(obj3);
+		a.add(obj4);
+		HashMap<Integer, Emp> h=new HashMap<Integer, Emp>();
+		for(Emp obj:a)
+		{
+			h.put(obj.id, obj);
+		}
+		System.out.println("Enter the employee ID: ");
+		int Id = sc.nextInt();
+		Emp id=(Emp) h.get(Id);
+		if (id != null) 
+		{
+			System.out.println("Employee Name: " + id.name);
+			System.out.println("Employee Salary: " + id.sal);
+		}
+		else
+		{
+			System.out.println("Employee not found with ID: " + Id);
+		}
+
+
+
+	}
+
+}
+
+**********************************************************************
+package Arrays;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.sql.*;
+
+public class Eg2 {
+	int id;
+	String name;
+	int salary;
+	Eg2(int id,String name,int salary)
+	{
+		this.id=id;
+		this.name=name;
+		this.salary=salary;
+	}
+	public static void show1(ArrayList<Eg2> a,Scanner sc)
+	{
+		System.out.println("Enter the size of array: ");
+		int m=sc.nextInt();
+		int d[]=new int[m];
+		System.out.println("Enter the arrays values: ");
+		for(int i=0;i<m;i++)
+		{
+			d[i]=sc.nextInt();
+		}
+		int t=0;
+		for(int h=0;h<d.length;h++)
+		{
+			for(int j=h+1;j<d.length;j++)
+			{
+				if(d[h]>d[j])
+				{
+					t=d[h];
+					d[h]=d[j];
+					d[j]=t;
+				}
+			}
+		}
+		int count=0;
+		for (int i=1; i<m; i++) {
+			if ((d[i] != d[i-1]) && (d[i]!=0)) {
+				count++;
+			}
+		}
+		int x=0;
+		int z[]=new int[count];
+		if(d[0]!=0) {
+			z[x++]=d[0];
+		}
+		for(int i=1;i<d.length;i++)
+		{
+			if((d[i]!=d[i-1])&& (d[i]!=0))
+			{
+				z[x++]=d[i];
+			}
+		}
+		System.out.println("After removing duplicates and 0 array values: ");
+		for(int s=0;s<z.length;s++)
+		{
+			System.out.print(z[s]+" ");
+		}
+		System.out.println(" ");
+		for(int g:z)
+		{
+			for(Eg2 f:a)
+			{
+				if(f.id==g)
+				{
+					System.out.println("Name: "+f.name);
+					System.out.println("Salary: "+f.salary);
+				}
+			}
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		Connection con=null;
+		Statement stmt=null;
+		PreparedStatement stmt1=null;
+		ResultSet rs=null;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","admin");
+			System.out.println("Connection created");
+			System.out.println("Enter the table name: ");
+			String tname=sc.next();
+			char ch;
+			do
+			{
+				System.out.println("enter 1.table creation   2.Inserting values  3.Updation 4.Deletion  5.select");
+				int n=sc.nextInt();
+				switch(n) {
+
+				case 1: try {
+					String query="create table "+tname+"(id number,name varchar2(25),salary number)";
+					stmt=con.createStatement();
+					stmt.executeUpdate(query);
+					con.commit();
+					System.out.println("Table created");
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				} 
+
+				break;
+				case 2:
+					char c;
+					do {
+						try {
+							String query1="INSERT INTO "+ tname + " (id,name,salary) VALUES(?,?,?)";
+							System.out.println("Enter how many rows want to insert: ");
+							int m=sc.nextInt();
+							int count=1;
+							while(count<=m) {
+								System.out.println("Enter the id ,name and salary to insert into table: ");
+								int i=sc.nextInt();
+								String empname=sc.next();
+								int s=sc.nextInt();
+								stmt1 = con.prepareStatement(query1);
+								stmt1.setInt(1,i);
+								stmt1.setString(2,empname);
+								stmt1.setInt(3, s);
+								stmt1.executeUpdate();
+								con.commit();
+								System.out.println("inserted values: ");
+								count++;
+							}
+
+						}catch(Exception e)
+						{
+							e.printStackTrace();
+						}
+						System.out.println("Do you want to continue  for inserting rows: yes/no");
+						c=sc.next().charAt(0);
+					}while(c=='y' || c=='Y');
+					break;
+				case 3:
+					System.out.println("Enter the colunm id and new name to update: ");
+					int id=sc.nextInt();
+					String name=sc.next();
+					try {
+						String query2 = "UPDATE " + tname + " SET NAME=? WHERE ID=?";
+						stmt1=con.prepareStatement(query2);
+						stmt1.setString(1, name);
+						stmt1.setInt(2, id);
+						stmt1.executeUpdate();
+						con.commit();
+						System.out.println("Data uploaded");
+
+
+					}catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+					break;
+				case 4: try
+				{
+					System.out.println("Enter which id want to delete: ");
+					int h=sc.nextInt();
+					System.out.println("delete the data perminent : yes/no");
+					char b=sc.next().charAt(0);
+					if(b=='Y'|| b=='y') {
+						String query3 = "DELETE FROM " + tname + " WHERE id=?";
+						stmt1=con.prepareStatement(query3);
+						stmt1.setInt(1, h);
+						stmt1.executeUpdate();
+						con.commit();
+						System.out.println("row is deleted");
+					}
+
+				}catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+				break;
+				case 5:	
+					try {
+						String query4= "Select * from" +tname;
+						stmt1=con.prepareStatement(query4);
+						rs=stmt1.executeQuery();
+						ArrayList<Eg2> a=new ArrayList();
+						while(rs!=null && rs.next())
+						{
+							a.add(new Eg2(rs.getInt(1),rs.getString(2),rs.getInt(3)));
+
+						}
+						show1( a,sc);
+
+
+					}catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+					break;
+				}
+				System.out.println("Do you want to continue  yes/no");
+				ch=sc.next().charAt(0);
+			}while(ch=='Y' || ch=='y');
+
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+
+			}catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+}
